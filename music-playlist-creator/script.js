@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Shuffle modal songs
   function shuffledModal(pl) {
-    const shuffled = shuffleSongs([...pl.songs]);
+    const shuffled = shuffleSongs([pl.songs]);
     modalSongs.innerHTML = "";
     shuffled.forEach((s) => {
       const li = document.createElement("li");
