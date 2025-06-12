@@ -135,6 +135,8 @@ Estimated time spent: **18** hours spent in total
 
 `ADD_EMBEDDED_CODE_HERE`
 
+Hello. My loom has not been working correctly for the past two weeks, and I am unable to login on my work laptop. I tried to load the code on my personal laptop as well, but it wasn't working either. If you fork this code, and run it manually, everything works correctly, but unfortunately I am in a terrible situation where I don't have a successful walkthrough video. I sincerely apologize for this inconvenience.
+
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
