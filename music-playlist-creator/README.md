@@ -130,12 +130,16 @@ Estimated time spent: **18** hours spent in total
   - [ ] Selecting a sort option should result in a reordering based on the selected sort while maintaining a grid view.
 
 ### Walkthrough Video
+Updated Walkthrough Video Section:
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
+Embedded Code:
+`<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/b885c24975ff4c4e9fc3e56931e1d8c2?sid=4fefee5e-bdd2-415c-8d21-e4db1c32a168" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`
 
-`ADD_EMBEDDED_CODE_HERE`
+Link:
+`https://www.loom.com/share/b885c24975ff4c4e9fc3e56931e1d8c2?sid=718d73ef-db0d-48bc-8e30-4e228c16a157`
 
-Hello. My loom has not been working correctly for the past two weeks, and I am unable to login on my work laptop. I tried to load the code on my personal laptop as well, but it wasn't working either. If you fork this code, and run it manually, everything works correctly, but unfortunately I am in a terrible situation where I don't have a successful walkthrough video. I sincerely apologize for this inconvenience.
+Updated Message:
+Hello CodePath Team! My loom has not been working correctly for the past two weeks, and I was originally unable to login on my work laptop using my Salesforce email. Additionally, the Loom website kept me in a limbo where I wasn't able to sign in or out, and it was just a loading page. This happened last week as well. I tried to load the code on my personal laptop, but it wasn't working either due to me not being able to fork from my own repository. I still submitted my original project although the walkthrough video was not there, which is noted in my submission notes. This walkthrough video section is the only part of the github repository that has been edited since my timely submission. I was able to finally log into Loom on a private browser using my personal account after about an hour of trial and error with the account I originally intended to use, so I sincerely apologize for any potential inconvenience. Thank you all so much for your understanding!
 
 ### Reflection
 
