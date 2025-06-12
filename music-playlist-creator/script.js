@@ -1,15 +1,4 @@
-//Added stuff from Devarsh
-
-document.addEventListener("DOMContentLoaded", () => {
-    const  container = document.getElementById("playlist-container");
-});
-
-fetch("data.json").then(response => {
-    if(!response.ok){
-        throw new Error("Network error")
-    }
-});
-
+// Main playlist explorer logic
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("playlist-container");
@@ -20,14 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalName = document.getElementById("modal-name");
   const modalAuthor = document.getElementById("modal-author");
   const modalSongs = document.getElementById("modal-songs");
+  let currentPlaylist = null;
 
-
-  // 1) Load playlists via fetch().then() chaining
+  // Load playlists
   fetch("data.json")
     .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network error: " + response.status);
-      }
+      if (!response.ok) throw new Error("Network error: " + response.status);
       return response.json();
     })
     .then((data) => {
@@ -37,27 +24,22 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Failed to load playlists:", err);
     });
 
-  // 2) Create each card
+  // Create playlist card
   function createPlaylistTile(pl) {
     const tile = document.createElement("div");
     tile.className = "playlist";
     tile.innerHTML = `
-          <img src="${pl.playlist_art}" alt="${pl.playlist_name}">
-          <h3>${pl.playlist_name}</h3>
-          <p>By ${pl.playlist_author}</p>
-          <span class="heart-icon"><i class="fa-solid fa-heart"></i></span>
-          <span class="like-count">${pl.likes}</span>
-          <span class= "delete-icon"><i class="fa-solid fa-trash"></i></span>
-        `;
-
-    // open modal when clicking the tile (but not the heart)
+      <img src="${pl.playlist_art}" alt="${pl.playlist_name}">
+      <h3>${pl.playlist_name}</h3>
+      <p>By ${pl.playlist_author}</p>
+      <span class="heart-icon"><i class="fa-solid fa-heart"></i></span>
+      <span class="like-count">${pl.likes}</span>
+      <span class="delete-icon"><i class="fa-solid fa-trash"></i></span>
+    `;
     tile.addEventListener("click", (e) => {
-      if (!e.target.classList.contains("heart-icon")) {
-        openModal(pl);
-      }
+      if (!e.target.classList.contains("heart-icon")) openModal(pl);
     });
-
-    // toggle like/unlike
+    // Like/unlike
     const heart = tile.querySelector(".heart-icon");
     const count = tile.querySelector(".like-count");
     heart.addEventListener("click", (e) => {
@@ -71,21 +53,17 @@ document.addEventListener("DOMContentLoaded", () => {
         count.textContent = ++n;
       }
     });
+    // Delete
     const deleteBtn = tile.querySelector(".delete-icon");
-    deleteBtn.addEventListener("click", (e) =>{
-        console.log('are we getting here')
-        e.stopPropagation();
-        tile.remove();
-    })
-
+    deleteBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      tile.remove();
+    });
     container.appendChild(tile);
   }
 
-  let currentPlaylist = null;
-  // 3) Populate and show modal
+  // Show modal with playlist details
   function openModal(pl) {
-    console.log(pl);
-    console.log("are we getting here");
     modalArt.src = pl.playlist_art;
     modalName.textContent = pl.playlist_name;
     modalAuthor.textContent = "By " + pl.playlist_author;
@@ -94,67 +72,55 @@ document.addEventListener("DOMContentLoaded", () => {
       const li = document.createElement("li");
       li.className = "modal-song-item";
       li.innerHTML = `
-          <img src="${s.cover}" alt="${s.title} cover" class="song-cover">
-          <div class="song-details">
-            <span class="song-title">${s.title}</span>
-            <span class="song-artist">${s.artist}</span>
-            <span class="song-duration">${s.duration}</span>
-          </div>
-        `;
+        <img src="${s.cover}" alt="${s.title} cover" class="song-cover">
+        <div class="song-details">
+          <span class="song-title">${s.title}</span>
+          <span class="song-artist">${s.artist}</span>
+          <span class="song-duration">${s.duration}</span>
+        </div>
+      `;
       modalSongs.appendChild(li);
-      currentPlaylist = pl;
     });
+    currentPlaylist = pl;
     modal.classList.add("show");
   }
 
-  function shuffledModal(pl2) {
-    pl2 = shuffleSongs(pl2.songs);
-    console.log(pl2);
+  // Shuffle modal songs
+  function shuffledModal(pl) {
+    const shuffled = shuffleSongs([...pl.songs]);
     modalSongs.innerHTML = "";
-    pl2.forEach((s) => {
+    shuffled.forEach((s) => {
       const li = document.createElement("li");
       li.className = "modal-song-item";
       li.innerHTML = `
-              <img src= "${s.cover}" alt="${s.title} cover" class="song-cover">
-              <div class="song-details">
-                <span class="song-title" id="song-title-modal">${s.title}</span>
-                <span class="song-artist">${s.artist}</span>
-                <span class="song-duration">${s.duration}</span>
-              </div>
-            `;
+        <img src="${s.cover}" alt="${s.title} cover" class="song-cover">
+        <div class="song-details">
+          <span class="song-title">${s.title}</span>
+          <span class="song-artist">${s.artist}</span>
+          <span class="song-duration">${s.duration}</span>
+        </div>
+      `;
       modalSongs.appendChild(li);
     });
   }
 
-  function shuffleSongs(songsArray) {
-    for (let i = songsArray.length - 1; i > 0; i--) {
+  // Fisher-Yates shuffle
+  function shuffleSongs(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      const temp = songsArray[i];
-      songsArray[i] = songsArray[j];
-      songsArray[j] = temp;
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
-    console.log(songsArray);
-    return songsArray;
+    return arr;
   }
 
- 
-
-
-
-
-  // 4) Close handlers
+  // Modal close handlers
   closeBtn.addEventListener("click", () => {
     modal.classList.remove("show");
   });
   modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("show");
-    }
+    if (e.target === modal) modal.classList.remove("show");
   });
   shuffleBtn.addEventListener("click", () => {
-    console.log("are we getting here");
-    console.log(currentPlaylist.songs);
-    shuffledModal(currentPlaylist);
+    if (currentPlaylist) shuffledModal(currentPlaylist);
   });
 });
-

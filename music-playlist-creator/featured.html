@@ -3,26 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Music Playlist Explorer</title>
-
     <link rel="stylesheet" href="style.css" />
-    <!-- Add this inside your <head> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
-  <div class = "background-shadow"></div>
-
-  <body >
-
+  <body>
+    <div class="background-shadow"></div>
     <header>
-      <!-- Your header content here -->
       <h1>Music Playlist Explorer</h1>
       <div id="navHeader">
         <h3 class="navElements"><a href="index.html">All Playlists</a></h3>
-        <h3 class="navElements"><a href="featured.html">Featured</a></h3>
+        <h3 class="navElements"><a href="featured.html" class="active">Featured</a></h3>
       </div>
     </header>
     <svg preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
@@ -75,10 +69,8 @@
         d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"
       />
     </svg>
-    <main onload="featuredPlaylistFunction()">
-      <div id="featured-container" class="featured-container">
-        <!--Work is done is JS and JSON-->
-      </div>
+    <main>
+      <div id="featured-container" class="featured-container"></div>
       <div id="featured-playlist">
         <div class="featured-content">
           <div class="featuredGrid">
@@ -95,11 +87,7 @@
         </div>
       </div>
     </main>
-
-    <footer>
-      <!-- Your footer content here -->
-    </footer>
-    <!-- <script src="data.json"></script> -->
+    <footer></footer>
     <script src="featured.js"></script>
   </body>
 </html>
