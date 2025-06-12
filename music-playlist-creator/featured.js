@@ -1,26 +1,23 @@
 //Added stuff from Devarsh
 
 document.addEventListener("DOMContentLoaded", () => {
-    const  container = document.getElementById("playlist-container");
+  const container = document.getElementById("featured-container");
 });
 
-fetch("data.json").then(response => {
-    if(!response.ok){
-        throw new Error("Network error")
-    }
+fetch("data.json").then((response) => {
+  if (!response.ok) {
+    throw new Error("Network error");
+  }
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("playlist-container");
-  const modal = document.getElementById("playlist-modal");
-  const shuffleBtn = modal.querySelector(".shuffle-button");
-  const closeBtn = modal.querySelector(".close-button");
-  const modalArt = document.getElementById("modal-art");
-  const modalName = document.getElementById("modal-name");
-  const modalAuthor = document.getElementById("modal-author");
-  const modalSongs = document.getElementById("modal-songs");
-
+    const container = document.getElementById("featured-container");
+    const featuredPlaylist = document.getElementById("featured-playlist");
+    const shuffleBtn = featuredPlaylist.querySelector(".shuffle-button");
+  const featuredArt = document.getElementById("featured-art");
+  const featuredName = document.getElementById("featured-name");
+  const featuredAuthor = document.getElementById("featured-author");
+  const featuredSongs = document.getElementById("featured-songs");
 
   // 1) Load playlists via fetch().then() chaining
   fetch("data.json")
@@ -31,35 +28,29 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json();
     })
     .then((data) => {
-      data.playlists.forEach(createPlaylistTile);
+    console.log(data.playlists);
+    let randomPlaylist = featuredPlaylistFunction(data.playlists);
+      openModal(randomPlaylist);
     })
     .catch((err) => {
       console.error("Failed to load playlists:", err);
     });
 
   // 2) Create each card
-  function createPlaylistTile(pl) {
-    const tile = document.createElement("div");
-    tile.className = "playlist";
-    tile.innerHTML = `
+  function createStaticModal(pl) {
+    const featuredTile = document.createElement("div");
+    featuredTile.className = "playlist";
+    featuredTile.innerHTML = `
           <img src="${pl.playlist_art}" alt="${pl.playlist_name}">
           <h3>${pl.playlist_name}</h3>
           <p>By ${pl.playlist_author}</p>
           <span class="heart-icon"><i class="fa-solid fa-heart"></i></span>
           <span class="like-count">${pl.likes}</span>
-          <span class= "delete-icon"><i class="fa-solid fa-trash"></i></span>
         `;
 
-    // open modal when clicking the tile (but not the heart)
-    tile.addEventListener("click", (e) => {
-      if (!e.target.classList.contains("heart-icon")) {
-        openModal(pl);
-      }
-    });
-
     // toggle like/unlike
-    const heart = tile.querySelector(".heart-icon");
-    const count = tile.querySelector(".like-count");
+    const heart = featuredTile.querySelector(".heart-icon");
+    const count = featuredTile.querySelector(".like-count");
     heart.addEventListener("click", (e) => {
       e.stopPropagation();
       let n = parseInt(count.textContent, 10);
@@ -71,14 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         count.textContent = ++n;
       }
     });
-    const deleteBtn = tile.querySelector(".delete-icon");
-    deleteBtn.addEventListener("click", (e) =>{
-        console.log('are we getting here')
-        e.stopPropagation();
-        tile.remove();
-    })
 
-    container.appendChild(tile);
+    container.appendChild(featuredTile);
   }
 
   let currentPlaylist = null;
@@ -86,13 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function openModal(pl) {
     console.log(pl);
     console.log("are we getting here");
-    modalArt.src = pl.playlist_art;
-    modalName.textContent = pl.playlist_name;
-    modalAuthor.textContent = "By " + pl.playlist_author;
-    modalSongs.innerHTML = "";
+    featuredArt.src = pl.playlist_art;
+    featuredName.textContent = pl.playlist_name;
+    featuredAuthor.textContent = "By " + pl.playlist_author;
+    featuredSongs.innerHTML = "";
     pl.songs.forEach((s) => {
       const li = document.createElement("li");
-      li.className = "modal-song-item";
+      li.className = "featured-song-item";
       li.innerHTML = `
           <img src="${s.cover}" alt="${s.title} cover" class="song-cover">
           <div class="song-details">
@@ -101,28 +86,27 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="song-duration">${s.duration}</span>
           </div>
         `;
-      modalSongs.appendChild(li);
+      featuredSongs.appendChild(li);
       currentPlaylist = pl;
     });
-    modal.classList.add("show");
   }
 
   function shuffledModal(pl2) {
     pl2 = shuffleSongs(pl2.songs);
     console.log(pl2);
-    modalSongs.innerHTML = "";
+    featuredSongs.innerHTML = "";
     pl2.forEach((s) => {
       const li = document.createElement("li");
-      li.className = "modal-song-item";
+      li.className = "featured-song-item";
       li.innerHTML = `
-              <img src= "${s.cover}" alt="${s.title} cover" class="song-cover">
+              <img src="${s.cover}" alt="${s.title} cover" class="song-cover">
               <div class="song-details">
-                <span class="song-title" id="song-title-modal">${s.title}</span>
+                <span class="song-title">${s.title}</span>
                 <span class="song-artist">${s.artist}</span>
                 <span class="song-duration">${s.duration}</span>
               </div>
             `;
-      modalSongs.appendChild(li);
+      featuredSongs.appendChild(li);
     });
   }
 
@@ -137,24 +121,21 @@ document.addEventListener("DOMContentLoaded", () => {
     return songsArray;
   }
 
- 
+  function featuredPlaylistFunction(pl) {
 
+    const randomNum = Math.floor(Math.random() * pl.length);
+    const featured = pl[randomNum];
+    openModal(featured)
 
-
+}
 
   // 4) Close handlers
-  closeBtn.addEventListener("click", () => {
-    modal.classList.remove("show");
-  });
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("show");
-    }
-  });
   shuffleBtn.addEventListener("click", () => {
     console.log("are we getting here");
     console.log(currentPlaylist.songs);
     shuffledModal(currentPlaylist);
   });
-});
 
+
+
+});

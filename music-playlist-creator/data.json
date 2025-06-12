@@ -1,0 +1,356 @@
+{
+  "playlists": [
+    {
+      "playlistID": 1,
+      "playlist_name": "Energetic",
+      "playlist_author": "Nene",
+      "playlist_art": "assets/img.102.jpeg",
+      "likes": 58,
+      "songs": [
+        {
+          "songID": 101,
+          "cover": "assets/img.101.jpeg",
+          "title": "Supernatural",
+          "artist": "NewJeans",
+          "duration": "3:11"
+        },
+        {
+          "songID": 102,
+          "cover": "assets/img.102.jpeg",
+          "title": "Bubble Pop Electric",
+          "artist": "Gwen Stefani",
+          "duration": "3:42"
+        },
+        {
+          "songID": 103,
+          "cover": "assets/img.103.jpeg",
+          "title": "Hey Mickey",
+          "artist": "Baby Tate",
+          "duration": "1:55"
+        },
+        {
+          "songID": 104,
+          "cover": "assets/img.104.jpeg",
+          "title": "The Big Big Beat",
+          "artist": "Azealia Beats",
+          "duration": "3:35"
+        },
+        {
+          "songID": 105,
+          "cover": "assets/img.105.jpeg",
+          "title": "THE CUNTY VOGUE SESSION",
+          "artist": "Kevin Jz Prodigy",
+          "duration": "6:51"
+        }
+      ]
+    },
+    {
+      "playlistID": 2,
+      "playlist_name": "Relaxing",
+      "playlist_author": "Jessica",
+      "playlist_art": "assets/img.202.jpeg",
+      "likes": 124,
+      "songs": [
+        {
+          "songID": 201,
+          "cover": "assets/img.201.jpeg",
+          "title": "The Great Fairy Fountain",
+          "artist": "Video Game Music Box",
+          "duration": "3:14"
+        },
+        {
+          "songID": 202,
+          "cover": "assets/img.202.jpeg",
+          "title": "Georgia on My Mind - Original Master Recording",
+          "artist": "Ray Charles",
+          "duration": "3:37"
+        },
+        {
+          "songID": 203,
+          "cover": "assets/img.203.jpeg",
+          "title": "La Llorona",
+          "artist": "Angela Aguilar",
+          "duration": "8:10"
+        },
+        {
+          "songID": 204,
+          "cover": "assets/img.204.jpeg",
+          "title": "Still With You",
+          "artist": "Jung Kook",
+          "duration": "3:59"
+        },
+        {
+          "songID": 205,
+          "cover": "assets/img.205.jpeg",
+          "title": "Intro: Singularity",
+          "artist": "BTS",
+          "duration": "3:16"
+        }
+      ]
+    },
+    {
+      "playlistID": 3,
+      "playlist_name": "Soul",
+      "playlist_author": "Obi",
+      "playlist_art": "assets/img.302.jpeg",
+      "likes": 87,
+      "songs": [
+        {
+          "songID": 301,
+          "cover": "assets/img.301.jpeg",
+          "title": "Don't You Worry 'Bout A Thing",
+          "artist": "Stevie Wonder",
+          "duration": "4:44"
+        },
+        {
+          "songID": 302,
+          "cover": "assets/img.302.jpeg",
+          "title": "Love Train",
+          "artist": "The O'Jays",
+          "duration": "2:58"
+        },
+        {
+          "songID": 303,
+          "cover": "assets/img.303.jpeg",
+          "title": "Is It a Crime",
+          "artist": "Sade",
+          "duration": "6:21"
+        },
+        {
+          "songID": 304,
+          "cover": "assets/img.304.jpeg",
+          "title": "Share My World",
+          "artist": "Mary J. Blige",
+          "duration": "5:06"
+        },
+        {
+          "songID": 305,
+          "cover": "assets/img.305.jpeg",
+          "title": "As",
+          "artist": "Stevie Wonder",
+          "duration": "7:07"
+        }
+      ]
+    },
+    {
+      "playlistID": 4,
+      "playlist_name": "Indie",
+      "playlist_author": "Janessica",
+      "playlist_art": "assets/img.405.jpeg",
+      "likes": 0,
+      "songs": [
+        {
+          "songID": 401,
+          "cover": "assets/img.401.jpeg",
+          "title": "Thats No Fun",
+          "artist": "Steve Lacy",
+          "duration": "2:41"
+        },
+        {
+          "songID": 402,
+          "cover": "assets/img.402.jpeg",
+          "title": "4Me 4Me",
+          "artist": "Malcom Todd",
+          "duration": "3:30"
+        },
+        {
+          "songID": 403,
+          "cover": "assets/img.403.jpeg",
+          "title": "Here With Me",
+          "artist": "d4vd",
+          "duration": "4:01"
+        },
+        {
+          "songID": 404,
+          "cover": "assets/img.404.jpeg",
+          "title": "Desert Eagle",
+          "artist": "Silica Gel",
+          "duration": "5:08"
+        },
+        {
+          "songID": 405,
+          "cover": "assets/img.405.jpeg",
+          "title": "Slow Burn",
+          "artist": "Infinity Song",
+          "duration": "3:21"
+        }
+      ]
+    },
+    {
+      "playlistID": 5,
+      "playlist_name": "Afrobeats",
+      "playlist_author": "Ezinne",
+      "playlist_art": "assets/img.502.jpeg",
+      "likes": 150,
+      "songs": [
+        {
+          "songID": 501,
+          "cover": "assets/img.501.jpeg",
+          "title": "Fearless",
+          "artist": "Flavour, Ejyk Nwamba",
+          "duration": "2:56"
+        },
+        {
+          "songID": 502,
+          "cover": "assets/img.502.jpeg",
+          "title": "Don't Leave",
+          "artist": "Rema",
+          "duration": "3:05"
+        },
+        {
+          "songID": 503,
+          "cover": "assets/img.503.jpeg",
+          "title": "Dior",
+          "artist": "Ruger",
+          "duration": "3:41"
+        },
+        {
+          "songID": 504,
+          "cover": "assets/img.504.jpeg",
+          "title": "No Time (feat. P Square)",
+          "artist": "Bracket, P-Square",
+          "duration": "3:53"
+        },
+        {
+          "songID": 505,
+          "cover": "assets/img.505.jpeg",
+          "title": "1er Gaou",
+          "artist": "Magic System",
+          "duration": "4:55"
+        }
+      ]
+    },
+    {
+      "playlistID": 6,
+      "playlist_name": "Orchestra",
+      "playlist_author": "Nne",
+      "playlist_art": "assets/img.604.jpeg",
+      "likes": 89,
+      "songs": [
+        {
+          "songID": 601,
+          "cover": "assets/img.601.jpeg",
+          "title": "Concerto No. 4 in F minor, Op. 8, RV 297, \"L'inverno\"(Winter):I.Allegro non molto",
+          "artist": "Antonio Vivaldi",
+          "duration": "3:43"
+        },
+        {
+          "songID": 602,
+          "cover": "assets/img.602.jpeg",
+          "title": "Alleluia",
+          "artist": "The Tabernacle Csingularityhoir at Temple Square, Mack Wilberg, Orchestra at Temple Square",
+          "duration": "6:15"
+        },
+        {
+          "songID": 603,
+          "cover": "assets/img.603.jpeg",
+          "title": "O Holy Night",
+          "artist": "Andre Rieu, Johann Strauss Orchestra",
+          "duration": "3:47"
+        },
+        {
+          "songID": 604,
+          "cover": "assets/img.604.jpeg",
+          "title": "JFN",
+          "artist": "Summer Swee-Singh",
+          "duration": "6:23"
+        },
+        {
+          "songID": 605,
+          "cover": "assets/img.605.jpeg",
+          "title": "Someone Strikes",
+          "artist": "Jung Se Rin",
+          "duration": "3:09"
+        }
+      ]
+    },
+    {
+      "playlistID": 7,
+      "playlist_name": "Rap",
+      "playlist_author": "Jess",
+      "playlist_art": "assets/img.705.jpeg",
+      "likes": 110,
+      "songs": [
+        {
+          "songID": 701,
+          "cover": "assets/img.701.jpeg",
+          "title": "Alter Ego (with JT)",
+          "artist": "Doechii, JT",
+          "duration": "3:24"
+        },
+        {
+          "songID": 702,
+          "cover": "assets/img.702.jpeg",
+          "title": "Antidote",
+          "artist": "Travis Scott",
+          "duration": "4:22"
+        },
+        {
+          "songID": 703,
+          "cover": "assets/img.703.jpeg",
+          "title": "Welcome To The Party (feat. Nicki Minaj)",
+          "artist": "Pop Smoke, Nicki Minaj",
+          "duration": "3:00"
+        },
+        {
+          "songID": 704,
+          "cover": "assets/img.704.jpeg",
+          "title": "Female Gucci Mane",
+          "artist": "Sexyy Red",
+          "duration": "2:29"
+        },
+        {
+          "songID": 705,
+          "cover": "assets/img.705.jpeg",
+          "title": "GUCCI (feat. Maliibu Miitch)",
+          "artist": "Bree Runway, Maliibu Miitch",
+          "duration": "3:00"
+        }
+      ]
+    },
+    {
+      "playlistID": 8,
+      "playlist_name": "Gay Club",
+      "playlist_author": "Queen Queen",
+      "playlist_art": "assets/img.805.jpeg",
+      "likes": 95,
+      "songs": [
+        {
+          "songID": 801,
+          "cover": "assets/img.801.jpeg",
+          "title": "Satisfaction (Hardwell & Maddix Remix)",
+          "artist": "David Guetta, Benny Benassi, Hardwell, Madix",
+          "duration": "3:24"
+        },
+        {
+          "songID": 802,
+          "cover": "assets/img.802.jpeg",
+          "title": "Crazy",
+          "artist": "LE SSERAFIM",
+          "duration": "2:41:"
+        },
+        {
+          "songID": 803,
+          "cover": "assets/img.803.jpeg",
+          "title": "1991",
+          "artist": "Azealia Banks",
+          "duration": "3:30"
+        },
+        {
+          "songID": 804,
+          "cover": "assets/img.804.jpeg",
+          "title": "What's Your Name",
+          "artist": "Doechii",
+          "duration": "2:38"
+        },
+        {
+          "songID": 805,
+          "cover": "assets/img.805.jpeg",
+          "title": "PURE/HONEY",
+          "artist": "Beyonce",
+          "duration": "4:47"
+        }
+      ]
+    }
+  ]
+}
